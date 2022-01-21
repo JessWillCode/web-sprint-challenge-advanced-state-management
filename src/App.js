@@ -10,11 +10,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 const App = (props)=> {
-  const { fetchSmurfs } = props;
+  const { dispatch } = props;
 
   useEffect(() => {
-    console.log('this has mounted');
-    fetchSmurfs();
+    dispatch(fetchSmurfs());
   })
 
   return (
@@ -30,4 +29,4 @@ const App = (props)=> {
 }
 
 
-export default connect(null, { fetchSmurfs } )(App);
+export default connect()(App);
